@@ -25,6 +25,7 @@ class UpdateButacaRequest extends FormRequest
      */
     public function rules()
     {
-        return Butaca::$rules;
+        $rules = Butaca::$rules;
+        return $rules;
     }
 }

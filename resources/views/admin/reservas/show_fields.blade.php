@@ -7,7 +7,7 @@
 <!-- Fecha Field -->
 <div class="form-group">
     {!! Form::label('fecha', 'Fecha:') !!}
-    <p>{!! $reserva->fecha !!}</p>
+    <p>{!! date("d-m-Y",strtotime($reserva->fecha)) !!}</p>
 </div>
 
 <!-- Numero Personas Field -->
@@ -18,8 +18,20 @@
 
 <!-- User Id Field -->
 <div class="form-group">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $reserva->user_id !!}</p>
+    {!! Form::label('butaca', 'Butacas:') !!}
+    <p>
+        @php($butacas=array())
+        @foreach($reserva->butacas as $butaca)
+            @php($butacas[]=$butaca->full_name)
+        @endforeach
+        {!! implode(",",$butacas) !!}
+    </p>
+</div>
+
+<!-- User Id Field -->
+<div class="form-group">
+    {!! Form::label('user_id', 'Usuario:') !!}
+    <p>{!! $reserva->user->name.", ". $reserva->user->last_name !!}</p>
 </div>
 
 <!-- Created At Field -->

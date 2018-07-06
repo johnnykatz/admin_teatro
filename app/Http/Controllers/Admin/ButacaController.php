@@ -121,12 +121,20 @@ class ButacaController extends AppBaseController
 
             return redirect(route('admin.butacas.index'));
         }
+        if ($this->butacaRepository->controlButacaRepetidaEdit($request['fila'], $request['columna'], $butaca->id)) {
+            $butaca = $this->butacaRepository->update($request->all(), $id);
+            Flash::success('Butaca registrada.');
+            return redirect(route('admin.butacas.index'));
+        } else {
+            Flash::error('El elemento fila ya está en uso.');
 
-        $butaca = $this->butacaRepository->update($request->all(), $id);
+            return redirect(route('admin.butacas.edit', [$butaca->id]));
 
-        Flash::success('Butaca registrada.');
+//            return view('admin.butacas.edit')->with('butaca', $butaca);
 
-        return redirect(route('admin.butacas.index'));
+        }
+
+
     }
 
     /**
