@@ -6,13 +6,13 @@
 
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', 'Nombre:') !!}
     <p>{!! $user->name !!}</p>
 </div>
 
 <!-- Last Name Field -->
 <div class="form-group">
-    {!! Form::label('last_name', 'Last Name:') !!}
+    {!! Form::label('last_name', 'Apellido:') !!}
     <p>{!! $user->last_name !!}</p>
 </div>
 
@@ -22,11 +22,7 @@
     <p>{!! $user->email !!}</p>
 </div>
 
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Password:') !!}
-    <p>{!! $user->password !!}</p>
-</div>
+
 
 <!-- Created At Field -->
 <div class="form-group">

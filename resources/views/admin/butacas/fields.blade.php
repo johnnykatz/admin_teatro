@@ -1,13 +1,13 @@
 <!-- Fila Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fila', 'Fila:') !!}
-    {!! Form::number('fila', null, ['class' => 'form-control']) !!}
+    {!! Form::number('fila', null, ['class' => 'form-control','required']) !!}
 </div>
 
 <!-- Columna Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('columna', 'Columna:') !!}
-    {!! Form::number('columna', null, ['class' => 'form-control']) !!}
+    {!! Form::number('columna', null, ['class' => 'form-control','required']) !!}
 </div>
 
 <!-- Submit Field -->

@@ -65,4 +65,18 @@ class ButacaRepository extends BaseRepository
             return true;
         }
     }
+
+    public function controlButacaRepetidaEdit($fila, $columna, $butaca_id)
+    {
+        $butaca = DB::table('butacas')
+            ->where('columna', $columna)
+            ->where('fila', $fila)
+            ->where('id', '<>', $butaca_id)
+            ->first();
+        if ($butaca) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

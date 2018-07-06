@@ -17,7 +17,6 @@ class CreateButacasTable extends Migration
             $table->increments('id');
             $table->integer('fila');
             $table->integer('columna');
-            $table->boolean('activo')->default(true);
             $table->timestamps();
         });
     }
